@@ -1,39 +1,140 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Camera Gallery Image Picker
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+A Flutter package that provides a simple and customizable way to capture images from the camera and pick image from gallery and both from camera and gallery at a same time.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+## Installation
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Add the following dependency to your `pubspec.yaml` file:
 
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+```yaml
+dependencies:
+  camera_gallery_image_picker: ^0.0.1
 ```
 
-## Additional information
+Then, run `flutter pub get` to install the package.
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+## IOS
+Add following keys to your `info.plist` file:
+
+```
+ <key>NSCameraUsageDescription</key>
+ <string>Describe why yo need camera permission</string>
+ <key>NSPhotoLibraryUsageDescription</key>
+ <string>Describe why you need photo library permission</string>
+```
+
+## Android
+No any configuration is required.
+
+## Usage
+Import the package:
+```
+import 'package:camera_gallery_image_picker/camera_gallery_image_picker.dart';
+```
+
+
+## Screenshots
+<img src="screenshots/1.png" height="300cm"/>
+<img src="screenshots/2.png" height="300cm"/>
+
+## Example
+```
+import 'dart:io';
+
+import 'package:flutter/material.dart';
+import 'package:camera_gallery_image_picker/camera_gallery_image_picker.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Example Camera Gallery Image Picker',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const CameraGalleryImagePickerExample(),
+    );
+  }
+}
+
+class CameraGalleryImagePickerExample extends StatefulWidget {
+  const CameraGalleryImagePickerExample({super.key});
+
+  @override
+  State<CameraGalleryImagePickerExample> createState() =>
+      _CameraGalleryImagePickerState();
+}
+
+class _CameraGalleryImagePickerState
+    extends State<CameraGalleryImagePickerExample> {
+  File? _imageFile;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Image Picker Example'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            if (_imageFile != null) ...[
+              Image.file(
+                _imageFile!,
+                height: 200,
+              ),
+              const SizedBox(height: 20)
+            ],
+            TextButton(
+              onPressed: () async {
+                _imageFile = await CameraGalleryImagePicker.pickImage(
+                  context: context,
+                  source: ImagePickerSource.CAMERA,
+                );
+                setState(() {});
+              },
+              child: const Text(
+                'Capture Image from Camera',
+              ),
+            ),
+            const SizedBox(height: 10),
+            TextButton(
+              onPressed: () async {
+                _imageFile = await CameraGalleryImagePicker.pickImage(
+                  context: context,
+                  source: ImagePickerSource.GALLERY,
+                );
+                setState(() {});
+              },
+              child: const Text(
+                'Pick Image from Gallery',
+              ),
+            ),
+            const SizedBox(height: 10),
+            TextButton(
+              onPressed: () async {
+                _imageFile = await CameraGalleryImagePicker.pickImage(
+                  context: context,
+                  source: ImagePickerSource.BOTH,
+                );
+                setState(() {});
+              },
+              child: const Text(
+                'Pick Image from Both',
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+```
