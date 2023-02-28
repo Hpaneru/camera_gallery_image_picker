@@ -55,7 +55,7 @@ class _CameraGalleryImagePickerState
               onPressed: () async {
                 _imageFile = await CameraGalleryImagePicker.pickImage(
                   context: context,
-                  source: ImagePickerSource.CAMERA,
+                  source: ImagePickerSource.camera,
                 );
                 setState(() {});
               },
@@ -68,7 +68,7 @@ class _CameraGalleryImagePickerState
               onPressed: () async {
                 _imageFile = await CameraGalleryImagePicker.pickImage(
                   context: context,
-                  source: ImagePickerSource.GALLERY,
+                  source: ImagePickerSource.gallery,
                 );
                 setState(() {});
               },
@@ -81,7 +81,7 @@ class _CameraGalleryImagePickerState
               onPressed: () async {
                 _imageFile = await CameraGalleryImagePicker.pickImage(
                   context: context,
-                  source: ImagePickerSource.BOTH,
+                  source: ImagePickerSource.both,
                 );
                 setState(() {});
               },

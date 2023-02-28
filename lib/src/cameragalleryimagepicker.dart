@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 enum ImagePickerSource {
-  BOTH,
-  CAMERA,
-  GALLERY,
+  both,
+  camera,
+  gallery,
 }
 
 class CameraGalleryImagePicker {
@@ -58,11 +58,11 @@ class CameraGalleryImagePicker {
     }
 
     switch (source) {
-      case ImagePickerSource.CAMERA:
+      case ImagePickerSource.camera:
         return captureImageFromCamera();
-      case ImagePickerSource.GALLERY:
+      case ImagePickerSource.gallery:
         return pickImageFromGallery();
-      case ImagePickerSource.BOTH:
+      case ImagePickerSource.both:
         return showDialog<void>(
           context: context,
           barrierDismissible: barrierDismissible,
