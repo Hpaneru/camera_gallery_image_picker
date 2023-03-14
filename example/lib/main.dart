@@ -33,6 +33,8 @@ class CameraGalleryImagePickerExample extends StatefulWidget {
 class _CameraGalleryImagePickerState
     extends State<CameraGalleryImagePickerExample> {
   File? _imageFile;
+  List<File> _multipleImageFiles = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,6 +50,26 @@ class _CameraGalleryImagePickerState
               Image.file(
                 _imageFile!,
                 height: 200,
+              ),
+              const SizedBox(height: 20)
+            ],
+            if (_multipleImageFiles.isNotEmpty) ...[
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: _multipleImageFiles
+                      .map(
+                        (File file) => Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image.file(
+                            file,
+                            height: 100,
+                          ),
+                        ),
+                      )
+                      .toList(),
+                ),
               ),
               const SizedBox(height: 20)
             ],
@@ -87,6 +109,17 @@ class _CameraGalleryImagePickerState
               },
               child: const Text(
                 'Pick Image from Both',
+              ),
+            ),
+            const SizedBox(height: 10),
+            TextButton(
+              onPressed: () async {
+                _multipleImageFiles =
+                    await CameraGalleryImagePicker.pickMultiImage();
+                setState(() {});
+              },
+              child: const Text(
+                'Pick Multiple Images',
               ),
             ),
           ],

@@ -129,4 +129,27 @@ class CameraGalleryImagePicker {
         );
     }
   }
+
+  static Future<List<File>> pickMultiImage({
+    double? maxWidth,
+    double? maxHeight,
+    int? imageQuality,
+  }) async {
+    assert(imageQuality == null || (imageQuality >= 0 && imageQuality <= 100));
+
+    if (maxWidth != null && maxWidth < 0) {
+      throw ArgumentError.value(maxWidth, 'maxWidth cannot be negative');
+    }
+
+    if (maxHeight != null && maxHeight < 0) {
+      throw ArgumentError.value(maxHeight, 'maxHeight cannot be negative');
+    }
+
+    List<XFile>? pickedMultipleImages = await ImagePicker().pickMultiImage(
+      maxWidth: maxWidth,
+      maxHeight: maxHeight,
+      imageQuality: imageQuality,
+    );
+    return pickedMultipleImages.map((e) => File(e.path)).toList();
+  }
 }
