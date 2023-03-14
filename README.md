@@ -34,8 +34,8 @@ import 'package:camera_gallery_image_picker/camera_gallery_image_picker.dart';
 
 
 ## Screenshots
-<img src="screenshots/1.png" height="300cm"/>
-<img src="screenshots/2.png" height="300cm"/>
+<img src="https://github.com/Hpaneru/camera_gallery_image_picker/raw/feature/multi-image-picker/screenshots/1.png" height="300cm"/>
+<img src="https://github.com/Hpaneru/camera_gallery_image_picker/raw/feature/multi-image-picker/screenshots/2.png" height="300cm"/>
 
 ## Example
 ```
