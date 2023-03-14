@@ -1,6 +1,6 @@
 name: camera_gallery_image_picker
 description: Flutter Package to capture image from camera and pick image from gallery. This Package supports both the feature at a same time or individually.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/Hpaneru/camera_gallery_image_picker
 
 environment:
@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  image_picker: ^0.8.6+3
+  image_picker: ^0.8.7
 
 dev_dependencies:
   flutter_test:
