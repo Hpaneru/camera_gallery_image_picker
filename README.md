@@ -6,7 +6,7 @@ A Flutter package that provides a simple and customizable way to capture images 
 
 | Android | iOS | macOS | Web | Linux | Windows |
 |---------|-----|-------|-----|-------|---------|
-| ✔       | ✔   | :x:     | :x:   | :x:   | :x:     |
+| ✔       | ✔   | :x:   | :x: | :x:   | :x:     |
 
 ## Installation
 
