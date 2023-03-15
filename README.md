@@ -45,7 +45,7 @@ import 'package:camera_gallery_image_picker/camera_gallery_image_picker.dart';
 <img src="./screenshots/2.png" height="300cm"/>
 
 ## Example
-``` dart
+```dart
 
 import 'package:camera_gallery_image_picker/camera_gallery_image_picker.dart';
 
