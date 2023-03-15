@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=/Users/hemantpaneru/Documents/flutter"
-export "FLUTTER_APPLICATION_PATH=/Users/hemantpaneru/Documents/Projects/Own/camera_gallery_image_picker"
+export "FLUTTER_ROOT=/Users/ebpearls/Documents/flutter"
+export "FLUTTER_APPLICATION_PATH=/Users/ebpearls/Documents/projects/camera_gallery_image_picker"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_TARGET=lib/main.dart"
 export "FLUTTER_BUILD_DIR=build"
