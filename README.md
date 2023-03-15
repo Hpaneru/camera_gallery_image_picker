@@ -14,7 +14,7 @@ Add the following dependency to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  camera_gallery_image_picker: ^0.0.2
+  camera_gallery_image_picker: ^0.0.3
 ```
 
 Then, run `flutter pub get` to install the package.
