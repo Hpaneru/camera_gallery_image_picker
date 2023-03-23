@@ -1,12 +1,17 @@
-## 0.0.1 Release
+## 0.0.1
 
 * Initial Release.
 
-## 0.0.2 Multi Image Picker
+## 0.0.2
 
 * Image Picker Version Updated.
 * Multi Image Picker Feature Implemented.
 
-## 0.0.2 Readme
+## 0.0.3
 
-* Readme file updated
+* README.md file updated.
+
+## 0.0.4
+
+* README.md file updated.
+* Add some documentatios.

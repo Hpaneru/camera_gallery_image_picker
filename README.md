@@ -2,6 +2,12 @@
 
 A Flutter package that provides a simple and customizable way to capture images from the camera and pick image from gallery and both from camera and gallery at the same time.
 
+<p>
+<a href="https://pub.dev/packages/camera_gallery_image_picker"><img src="https://img.shields.io/pub/v/camera_gallery_image_picker.svg" alt="Pub"></a>
+<a href="https://github.com/Hpaneru/camera_gallery_image_picker"><img src="https://img.shields.io/github/stars/Hpaneru/camera_gallery_image_picker.svg?style=flat&logo=github&colorB=deeppink&label=stars" alt="Star on Github"></a>
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
+</p>
+
 ## Platform Support
 
 | Android | iOS | macOS | Web | Linux | Windows |
@@ -14,7 +20,7 @@ Add the following dependency to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  camera_gallery_image_picker: ^0.0.3
+  camera_gallery_image_picker: ^0.0.4
 ```
 
 Then, run `flutter pub get` to install the package.
@@ -40,9 +46,8 @@ import 'package:camera_gallery_image_picker/camera_gallery_image_picker.dart';
 
 
 ## Screenshots
-<img src="./screenshots/1.png" height="300cm"/>
-&nbsp
-<img src="./screenshots/2.png" height="300cm"/>
+![](https://github.com/Hpaneru/camera_gallery_image_picker/raw/main/screenshots/1.png)
+![](https://github.com/Hpaneru/camera_gallery_image_picker/raw/main/screenshots/2.png)
 
 ## Example
 ```dart

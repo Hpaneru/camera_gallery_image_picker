@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
+/// ENUMS for ImagePickerSource
 enum ImagePickerSource {
   both,
   camera,
@@ -9,6 +10,7 @@ enum ImagePickerSource {
 }
 
 class CameraGalleryImagePicker {
+  /// PICK AN IMAGE FROM CAMERA OR GALLERY WHICH RETURNS A [File] IMAGE
   static Future pickImage({
     double? maxWidth,
     double? maxHeight,
@@ -37,6 +39,7 @@ class CameraGalleryImagePicker {
       throw ArgumentError.value(maxHeight, 'maxHeight cannot be negative');
     }
 
+    /// PICK IMAGE FROM GALLERY AND RETURN A [File] IMAGE
     Future<File?>? pickImageFromGallery() async {
       XFile? pickedImage = await ImagePicker().pickImage(
         maxWidth: maxWidth,
@@ -47,6 +50,7 @@ class CameraGalleryImagePicker {
       return pickedImage == null ? null : File(pickedImage.path);
     }
 
+    /// PICK IMAGE FROM CAMERA AND RETURN A [File] IMAGE
     Future<File?>? captureImageFromCamera() async {
       XFile? capturedImage = await ImagePicker().pickImage(
         maxWidth: maxWidth,
@@ -57,6 +61,7 @@ class CameraGalleryImagePicker {
       return capturedImage == null ? null : File(capturedImage.path);
     }
 
+    /// SOURCE FOR IMAGE PICKER
     switch (source) {
       case ImagePickerSource.camera:
         return captureImageFromCamera();
@@ -130,6 +135,7 @@ class CameraGalleryImagePicker {
     }
   }
 
+  /// PICK MULTIPLE IMAGES FROM GALLERY WHICH RETURNS A LIST OF [File] IMAGE
   static Future<List<File>> pickMultiImage({
     double? maxWidth,
     double? maxHeight,
@@ -145,6 +151,7 @@ class CameraGalleryImagePicker {
       throw ArgumentError.value(maxHeight, 'maxHeight cannot be negative');
     }
 
+    /// PICK MULTIPLE IMAGES FROM GALLERY AND RETURN A LIST OF [File] IMAGE
     List<XFile>? pickedMultipleImages = await ImagePicker().pickMultiImage(
       maxWidth: maxWidth,
       maxHeight: maxHeight,
